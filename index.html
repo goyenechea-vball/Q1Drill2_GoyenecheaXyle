@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Profile Form</title>
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+    <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+    <py-config>
+        [[fetch]]
+        files = ["main.py"]
+    </py-config>
+    <style>
+    body {
+      background-color:	#E1AFD1; 
+      font-size: 2em;
+      font-family: 'Garamond', serif;
+      text-align: center;
+      margin-top: 30px;
+      justify-content: center;
+    }
+   
+    h1 {
+      font-family: 'Garamond', serif;
+      font-size: 25px;
+      color: #7469B6;
+      margin-bottom: 20px;
+    }
+     </style>
+    
+</head>
+<body>
+    <h1>Student Profile Form</h1>
+    <label>Name: <input id="name" type="text"></label><br>
+    <label>Age: <input id="age" type="number"></label><br>
+    <label>School: <input id="school" type="text"></label><br>
+    <button py-click="generate_message()">Generate Message</button>
+    <div id="output" style="white-space: pre; margin-top: 1em;"></div>
+    <script type="py" src="main.py"></script>
+</body>
+</html>
