@@ -1,10 +1,11 @@
-rom pyscript import display, clear
+from pyscript import display
+from js import document
 
 def generate_message(*args, **kwargs):
     # Get input values from the DOM
-    name = Element("name").value
-    age = Element("age").value
-    school = Element("school").value
+    name = document.getElementById("name").value
+    age = document.getElementById("age").value
+    school = document.getElementById("school").value
 
     # Assign strings to variables
     student_name = name
@@ -17,11 +18,11 @@ def generate_message(*args, **kwargs):
         f"\tName: \"{student_name}\"\n"
         f"\tAge: {student_age}\n"
         f"\tSchool: \"{student_school}\"\n"
-        f"\nWelcome, {student_name}! It's great to have you at {student_school}."
+        f"\nWelcome, {student_name}! It\'s great to have you at {student_school}."
     )
 
     # Clear previous message
-    clear("output")
+    document.getElementById("output").innerHTML = ""
 
     # Display the formatted message
     display(profile_message, target="output")
